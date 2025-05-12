@@ -2,9 +2,11 @@
 
 const args = process.argv.slice(2);
 const alarms = args.map(Number).filter((num) => !isNaN(num) && num > 0);
+//Invalid case
 if (alarms.length === 0) {
-	console.log("Please provide valid time in seconds.");
+	console.log("Please provide valid time.");
 }
+//Valid case
 alarms.forEach((alarm) => {
 	setTimeout(() => {
 		process.stdout.write("\x07");
